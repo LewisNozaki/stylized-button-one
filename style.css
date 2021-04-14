@@ -22,4 +22,20 @@ body {
   width: 50%;
   height: 50vh;
   border: 5px solid #333;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 4em;
+  row-gap: 4em;
+  padding: 4em;
+}
+
+button {
+  background: #fff;
+  color: #333;
+  border: 5px solid #333;
+  font-weight: 900;
+  font-size: 3em;
+  cursor: pointer;
+  transition: 9.2s ease;
 }
