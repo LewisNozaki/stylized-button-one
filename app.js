@@ -1,6 +1,8 @@
 const container = document.getElementsByClassName("container")[0];
 
-const createShadow = (num) => {
+const btns = document.getElementsByTagName("button");
+
+const createShadow = (num, elem) => {
   let shadow = "";
 
   for (let i = 0; i <= num; i++) {
@@ -11,7 +13,7 @@ const createShadow = (num) => {
     }
   }
 
-  container.style.boxShadow = shadow;
+  elem.style.boxShadow = shadow;
 };
 
-createShadow(30);
+createShadow(30, container);

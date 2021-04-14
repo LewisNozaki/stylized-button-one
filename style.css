@@ -16,12 +16,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(to bottom right,rgb(156, 135, 182),rgba(255, 255, 255, 0.1) 70%),
+              linear-gradient(to top right, pink, rgba(255, 255, 255, 0.1) 70%),
+              linear-gradient(to bottom left, aquamarine, rgba(255, 255, 255, 0.1) 70%),
+              linear-gradient(to top left, cornflowerblue, rgba(255, 255, 255, 0.1) 70%);
 }
 
 .container {
   width: 50%;
   height: 50vh;
-  border: 5px solid #333;
+  border: 7px solid #333;
+  background: white;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -33,9 +38,39 @@ body {
 button {
   background: #fff;
   color: #333;
-  border: 5px solid #333;
+  border: 7px solid #333;
   font-weight: 900;
   font-size: 3em;
   cursor: pointer;
-  transition: 9.2s ease;
+  transition: 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  --angle: 0deg;
+  box-shadow: -1px 1px 0 #000, 
+              -2px 2px 0 #000, 
+              -3px 3px 0 #000, 
+              -4px 4px 0 #000,
+              -5px 5px 0 #000, 
+              -6px 6px 0 #000, 
+              -7px 7px 0 #000, 
+              -8px 8px 0 #000,
+              -9px 9px 0 #000, 
+              -10px 10px 0 #000;
+  transform: translate(10px, -10px);
+  border-image: linear-gradient(var(--angle), lavender, pink, aquamarine, cornflowerblue, purple) 1;
+  animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
